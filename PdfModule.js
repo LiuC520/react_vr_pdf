@@ -1,16 +1,3 @@
-#### show pdf in react  360
-
-You can use pdf.js, and use texture in Plane/Box/Cylinder/Model/Plane/Sphere component.
-use canvas in client.js or NativeModules
-
-###### 1. add pdf.js in index.html
-```
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.550/pdf.min.js"></script>
-
-```
-
-###### 2. add PdfModule
-```
 
 import {Module} from 'react-360-web';
 let pagenum = 1 // pdf cunrrentNum
@@ -83,42 +70,3 @@ export default class PdfModule extends Module{
     })
   }
 }
-```
-
-
-###### 3. pass pdfurl/ width / height / pdf scale to module
-
-
-###### 4. then you can use pdfmodule in your code
-see index.js
-```
-componentWillMount(){
-    PDF.showPdf('http://localhost:8081/output.pdf',512,1024,2)
-  }
-
-  render() {
-    return (
-      <View style={styles.panel}>
-        <Plane
-        dimWidth={512}
-        dimHeight={512}
-        dimDepth={100}
-        texture={texture('fps')} // Use our custom texture
-      />
-        <View style={styles.greetingBox}>
-          <VrButton onClick={()=>{
-            PDF.showPage('next') // show next page
-            // PDF.showPage('last') // show last page
-          }}>
-            <Text style={styles.text}>
-              enter
-            </Text>
-
-          </VrButton>
-        </View>
-      </View>
-    );
-  }
-
-```# react_vr_pdf
-# react_vr_pdf
